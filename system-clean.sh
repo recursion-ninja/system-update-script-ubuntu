@@ -95,7 +95,7 @@ update_purge_cabal()
     cabal update
     print_segment 'Cabal' 'Purging'
     remove_named_matching 'store caches' '${HOME}/.cabal/store' 'ghc-*'
-    remove_named_matching 'local caches' '${HOME}'              'dist-newstyle'
+    remove_named_matching 'local caches' '${HOME}/Code'         'dist-newstyle'
 }
 
 update_purge_GHC()
@@ -114,7 +114,7 @@ update_purge_stack()
     stack update 
     print_segment 'Stack' 'Purging'
     remove_named_matching 'store caches' '${HOME}/.stack' 'snapshots'
-    remove_named_matching 'local caches' '${HOME}'        '.stack-work\(s\)?'
+    remove_named_matching 'local caches' '${HOME}/Code'   '.stack-work\(s\)?'
 }
 
 # Check that the script is running as root. If not, then prompt for the sudo
